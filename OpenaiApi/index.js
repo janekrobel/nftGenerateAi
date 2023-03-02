@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const aiGenerate = require('./aiGenerate.js');
 const cors = require('cors');
-const { images } = require('./nftImages.json');
 const axios = require('axios');
 const fs = require('fs');
+const PNG = require('pngjs').PNG;
+const path = require('path');
+
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -19,16 +21,29 @@ app.get('/',(req,res) => {
     });
 });
 
-app.post('/',(req,res) => {
-    axios.get(req.query.link, {responseType: "array-buffer"}).then((response)=>{
-        fs.writeFile();
-        images.push(response.data);
-    });  
-})
+app.post('/', async (req,res) => {
+    try {
+        axios.get(req.query.link, {responseType: "arraybuffer"}).then(async (response)=>{
+            let numFiles = 0;
+            const png = PNG.sync.read(response.data);
+            const pngBuffer = PNG.sync.write(png);
+            const files = await fs.promises.readdir('./images');
+            numFiles = files.length;
+            fs.writeFileSync(`./images/${numFiles}.png`, pngBuffer);
+            res.send(true);
+        });
+    } catch (err) {
+        console.error(err);
+        res.sendStatus(500);
+    }
+});
 
 app.get('/:_id',(req,res) => {
+    const filePath = path.join(__dirname, 'images', req.params._id + '.png');
     res.setHeader('Content-Type', 'image/png');
-    res.sendFile(images[req.params._id]);
-})
+    res.sendFile(filePath);
+});
 
-app.listen(3001); 
+app.listen(3001, () => {
+    console.log('Server listening on port 3001');
+});

@@ -18,8 +18,7 @@ exports.getGeneratedNft = async (aiProps) => {
             n: 1,
             size: "256x256"
         });
-        console.log("sent");
-        console.log(response.data.data[0].url)
+        
         return response.data.data[0].url;
         
     }

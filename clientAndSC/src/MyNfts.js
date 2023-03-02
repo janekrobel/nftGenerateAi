@@ -44,9 +44,8 @@ function MyNfts(){
         return(
             <>
                 <p className="myNftText">My Nfts:</p>
-                //fix this
                 {listOfIds.map((id) => {
-                    return <img className="myNftImage" src={`https://localhost:3001/${id}`}/>;
+                    return <img className="myNftImage" src={`http://localhost:3001/${id}`} alt={`NFT with ID ${id}`}/>;
                 })}
             </>
         );
