@@ -1,0 +1,165 @@
+.header{ 
+    width: 1451px;
+    height: 100px;
+    margin-left: -10px;
+    margin-top: -10px;
+    background: #302A2A;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+.MetamaskBtn{
+    margin-top: -20px;
+    width: 304px;
+    height: 84px;
+    margin-right: 100px;
+    transition: 0.2s all;
+    background-color: transparent;
+    border-color: transparent;
+    float:right;
+}
+.MetamaskBtn:active{
+    transform: scale(0.95);
+}
+
+.mainText{
+    position: absolute;
+    width: 994px;
+    height: 121px;
+    left: calc(50% - 994px/2);
+    top: calc(50% - 121px/2 - 127.5px);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 117px;
+    text-align: center;
+    color: #302A2A; 
+    text-shadow: 1px solid #000000;
+}
+
+.subText{
+    width: 100%;
+    height: 50px;
+    margin-top: 320px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.textInput{
+    width: 624px;
+    height: 74px;
+    margin-left: 348px;
+    border-radius: 0;
+    border: none;
+    font-size: 32px;
+    font-family: 'Roboto';
+    padding-left: 20px;
+    font-weight: 100;
+
+    background: #FFFFFF;
+    box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.25);
+}
+.generateBar{
+    display: flex;
+    block-size: 100%;
+    flex-direction: row;
+}
+
+.generateButton{
+    border-color: transparent;
+    background-color: transparent;
+    width: 187px;
+    height: 74px;
+    transition: 0.2s all;
+}
+.generateButton:active{
+    transform: scale(0.95);
+}
+
+.menuLink{
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 32px;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.menuLink:hover{
+    color: gainsboro;
+}
+
+.mintButton{
+    border-color: transparent;
+    background-color: transparent;
+    margin-top: 50px;
+    transition: 0.2s all;
+}
+.mintButton:active{
+    transform: scale(0.95);
+}
+
+
+.generatedText{
+    display: block;
+    margin: 0 auto;
+    height: 39px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+
+}
+
+.imageNft{
+    display: block;
+    margin: 0 auto;
+    height: 400px;
+    width: 400px;
+    border-radius: 72px;
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+}
+.secondaryText{
+    font-family: 'Roboto';
+    display: block;
+    margin: 0 auto;
+    font-size: 64px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.myNftImage{
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+}
+.errorMessage{
+    margin-left: 610px;
+    margin-top: 200px;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.mintDiv{
+    display: block;
+    text-align: center;
+}
+.myNftText{
+    font-family: 'Roboto';
+    font-size: 64px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 600px;
+    width: 500px;
+}
