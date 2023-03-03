@@ -20,7 +20,6 @@ function App(){
 
     const generateNft = async () => {
         const link = await axios.get(`http://localhost:3001/?aiParams=${nftParameters}`);
-        console.log(link.data);
         setImageLink(link.data);
     }
 
@@ -45,7 +44,6 @@ function App(){
         if(isConnected){
             const result = await contractModel.mint();
             if(result){
-                console.log("done");
                 const encodedLink = encodeURIComponent(imageLink);
                 const respose =  await axios.post(`http://localhost:3001/?link=${encodedLink}`);
                 navigate('/mynfts');
