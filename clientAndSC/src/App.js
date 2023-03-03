@@ -45,7 +45,9 @@ function App(){
         if(isConnected){
             const result = await contractModel.mint();
             if(result){
-                await axios.post(`http://localhost:3001/?link=${imageLink}`);
+                console.log("done");
+                const encodedLink = encodeURIComponent(imageLink);
+                const respose =  await axios.post(`http://localhost:3001/?link=${encodedLink}`);
                 navigate('/mynfts');
             }
         }

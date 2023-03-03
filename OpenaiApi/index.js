@@ -22,20 +22,16 @@ app.get('/',(req,res) => {
 });
 
 app.post('/', async (req,res) => {
-    try {
-        axios.get(req.query.link, {responseType: "arraybuffer"}).then(async (response)=>{
-            let numFiles = 0;
-            const png = PNG.sync.read(response.data);
-            const pngBuffer = PNG.sync.write(png);
-            const files = await fs.promises.readdir('./images');
-            numFiles = files.length;
-            fs.writeFileSync(`./images/${numFiles}.png`, pngBuffer);
-            res.send(true);
-        });
-    } catch (err) {
-        console.error(err);
-        res.sendStatus(500);
-    }
+    console.log(req.query.link);
+    axios.get(req.query.link, {responseType: "arraybuffer"}).then(async (response)=>{
+        let numFiles = 0;
+        const png = PNG.sync.read(response.data);
+        const pngBuffer = PNG.sync.write(png);
+        const files = await fs.promises.readdir('./images');
+        numFiles = files.length;
+        fs.writeFileSync(`./images/${numFiles}.png`, pngBuffer);
+        res.send(true);
+    });
 });
 
 app.get('/:_id',(req,res) => {
